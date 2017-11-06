@@ -25,17 +25,20 @@
         <?php $query = new WP_Query( array('post_type' => 'work', 'posts_per_page' => 5 ) );
         while ( $query->have_posts() ) : $query->the_post(); ?>
 
-        <a href="<?php echo esc_url(get_permalink()); ?>">
+        <a href="<?php the_permalink() ?>">
           <div class="work" style="background: <?php echo get_post_meta( get_the_ID(), 'color', true ); ?>">
             <div class="overlay"></div>
             <div class="image" style="background:url('<?php echo get_the_post_thumbnail_url(get_the_ID(),'full') ?>') no-repeat;"></div>
             <div class="content">
-                <a href="<?php the_permalink() ?>" rel="bookmark"><div class="title"><?php the_title(); ?></div></a>
-                <div class="tagline"><?php echo get_post_meta( get_the_ID(), 'tagline', true ); ?></div>
+                <a href="<?php the_permalink() ?>"><div class="title"><?php the_title(); ?></div>
+                </a>
+                <a href="<?php the_permalink() ?>"><div class="tagline"><?php echo get_post_meta( get_the_ID(), 'tagline', true ); ?></div></a>
+                <a href="<?php the_permalink() ?>">
                 <div class="meta">
                   <div class="field"><?php echo get_post_meta( get_the_ID(), 'field', true ); ?></div>
                   <div class="year"><?php echo get_post_meta( get_the_ID(), 'year', true ); ?></div>
-                </div>
+                </div></a>
+
             </div>
           </div>
         </a>

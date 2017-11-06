@@ -27,7 +27,7 @@
 	<header id="masthead" class="site-header">
 		<div id="wrapper">
 			<div class="site-branding">
-				<a href="/"><div class="site-name">Udara Jay</div></a>
+				<a href="/"><div class="site-name"><?php echo get_bloginfo( 'name' ); ?></div></a>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation">

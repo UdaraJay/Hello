@@ -519,13 +519,13 @@ a:hover, a:active {
 	display: block;
 	float: left;
 	width: 100%;
-	margin: 40px 0 30px 0;
+	margin: 45px 0 30px 0;
 }
 
 .main-navigation ul {
 	display: block;
 	list-style: none;
-	margin: 10px 0 0 0;
+	margin: -5px 0 0 0;
 	padding-left: 0;
 }
 
@@ -590,16 +590,7 @@ a:hover, a:active {
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+	display: none;
 }
 
 .site-main .comment-navigation, .site-main
@@ -623,6 +614,8 @@ a:hover, a:active {
 	text-align: right;
 	width: 50%;
 }
+
+
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -891,6 +884,12 @@ object {
 	margin: 0 auto;
 }
 
+@media (max-width: 700px) {
+	#wrapper{
+		width: 90%;
+	}
+}
+
 /*--------------------------------------------------------------
 # Site-header
 --------------------------------------------------------------*/
@@ -931,6 +930,56 @@ object {
 	justify-content: flex-end;
 	text-align: right;
 	font-weight: 400;
+}
+
+@media (max-width: 700px) {
+	.site-header #wrapper{
+		display: block;
+		text-align: center;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.site-header .site-branding{
+		width: 100%;
+		display: flex;
+		margin-top: 20px;
+	}
+
+	.site-header .site-branding .site-name{
+		font-size: 2em;
+	}
+
+	.site-header .main-navigation{
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		margin: 10px 0 0 0;
+		text-align: center;
+	}
+
+	.site-header .main-navigation .menu{
+		text-align: center;
+	}
+
+	.site-header .main-navigation .menu ul{
+		display: inline-block !important;
+		justify-content: center !important;
+		text-align: center !important;
+		margin: 0;
+	}
+
+	.site-header .main-navigation li{
+		display: block;
+		background: #e2e2e2;
+		padding:6px 16px 5px 16px;
+		border-radius: 90px;
+		margin-bottom: 10px;
+		margin: 0 10px 10px 0;
+		text-align: left;
+	}
+
+
 }
 
 /*--------------------------------------------------------------
@@ -1041,10 +1090,30 @@ object {
 	width: 67%;
 	min-height: 400px;
 	background: #f9f9f9;
-	box-shadow: 0 10px 60px rgba(0, 0, 0, 0.15);
 	border-radius: 2px;
 	max-height: 420px;
 	overflow: hidden;
+	box-shadow: 0 10px 60px rgba(0, 0, 0, 0.15);
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+}
+
+#homepage .writing .two-articles .post:hover{
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+	-webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -o-transform: scale(0.98);
+  transform: scale(0.98);
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
 }
 
 #homepage .writing .two-articles .post .image{
@@ -1088,6 +1157,10 @@ object {
 	background: #e2e2e2;
 }
 
+#homepage .writing .two-articles .post_1:hover{
+	background: #fff;
+}
+
 #homepage .writing .two-articles .post_1 .image{
 	width: 100%;
 	background: #e2e2e2;
@@ -1122,6 +1195,41 @@ background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(226,226,226
 background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(226,226,226,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#e2e2e2',GradientType=0 );
 	width: 100%;
+}
+
+@media (max-width: 700px) {
+
+	#homepage #wrapper{
+		width: 90%;
+	}
+
+	#homepage .landing{
+		margin: 40px 0 100px 0;
+	}
+
+	#homepage .writing .two-articles{
+		display: block;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+
+	#homepage .writing #wrapper{
+		width: 90%;
+	}
+
+	#homepage .writing .two-articles .post{
+		display: block;
+		width: 100%;
+		margin-bottom: 35px;
+	}
+
+	#homepage .writing .two-articles .post .content{
+		width: 100%;
+	}
+
+	#homepage .writing .two-articles .post_1{
+		width: 100%;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1358,6 +1466,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	line-height: 1.55;
 }
 
+@media (max-width: 700px){
+	#resume .entry-content-page .resumes{
+		display: block;
+	}
+
+	#resume .entry-content-page .linkedin{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	#resume .entry-content-page .download{
+		width: 100%;
+	}
+}
+
 
 
 /*--------------------------------------------------------------
@@ -1452,11 +1575,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	position: relative;
 	background: #f3f3f3;
 	width: 100%;
-	margin-bottom: 40px;
-	/*box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);*/
+	margin-bottom: 50px;
 	height:350px;
 	border-radius: 4px;
 	overflow: hidden;
+	box-shadow: 0 10px 60px rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+	display: inline-block;
+}
+
+#work .posts .work:hover{
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+	-webkit-transition: all 0.25s ease;
+	-moz-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
+	-webkit-transform: scale(0.98);
+  -moz-transform: scale(0.98);
+  -o-transform: scale(0.98);
+  transform: scale(0.98);
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
 }
 
 #work .posts .work .image{
@@ -1472,7 +1616,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #work .posts .work .content{
 	position: relative;
-	display: flex;
+	display: flex !important;
 	vertical-align:middle;
 	align-items: center;
 	flex-wrap: wrap;
@@ -1537,6 +1681,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 
 #work .posts .work .content .meta .field{
 	font-weight: 500;
+}
+
+@media (max-width: 700px){
+
+	#work .entry-content-page .buttons{
+		display: block;
+	}
+
+	#work .entry-content-page .dribbble{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	#work .entry-content-page .github{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	#work .posts .work{
+		margin-bottom: 20px;
+	}
+
+	#work .posts .work .image{
+		opacity: 0.5;
+	}
+
+	#work .posts .work .content{
+		width: 100%;
+	}
 }
 
 /*--------------------------------------------------------------

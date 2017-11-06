@@ -9,7 +9,7 @@
       <h2>
         I'm a creator hailing from Sri Lanka involved in <design>design</design>, <tech>tech</tecH> and <data>data science</data>.
         Currently studying Bioinformatics at UWO. <tidl>Founder & partner at Tidl Inc.</tidl></h2>
-        <a href="mailto:me@hello.com"><div class="say-hello animated fadeInUp"><div class="icon" data-icon="&#xe021;"></div> Say Hello</div></a>
+        <a href="mailto:me@udarajay.com"><div class="say-hello animated fadeInUp"><div class="icon" data-icon="&#xe021;"></div> Say Hello</div></a>
     </div>
   </div>
 
@@ -31,10 +31,12 @@
           <div class="post">
             <div class="image" style="background:url('<?php echo get_the_post_thumbnail_url(get_the_ID(),'full') ?>')"></div>
             <div class="content">
-              <a href="<?php the_permalink() ?>" rel="bookmark"><div class="title"><?php the_title(); ?></div></a>
+              <a href="<?php the_permalink() ?>" rel="bookmark"><div class="title"><?php the_title(); ?></div>
               <div class="summary"><?php the_excerpt() ?></div>
+              </a>
             </div>
           </div>
+
         <?php endwhile;
             wp_reset_postdata();
         ?>
@@ -52,8 +54,9 @@
             <div class="overlay"></div>
             <div class="image" style="background:url('<?php echo get_the_post_thumbnail_url(get_the_ID(),'full') ?>')"></div>
             <div class="content">
-              <a href="<?php the_permalink() ?>" rel="bookmark"><div class="title"><?php the_title(); ?></div></a>
+              <a href="<?php the_permalink() ?>" rel="bookmark"><div class="title"><?php the_title(); ?></div>
               <div class="summary"><?php the_excerpt() ?></div>
+              </a>
             </div>
           </div>
         <?php endwhile; wp_reset_postdata();
