@@ -5,11 +5,9 @@
 <div id="homepage">
   <div class="landing">
     <div id="wrapper">
-      <h1>Hello.</h1>
-      <h2>
-        I'm a creator hailing from Sri Lanka involved in <design>design</design>, <tech>tech</tecH> and <data>data science</data>.
-        Currently studying Bioinformatics at UWO. <tidl>Founder & partner at Tidl Inc.</tidl></h2>
-        <a href="mailto:me@udarajay.com"><div class="say-hello animated fadeInUp"><div class="icon" data-icon="&#xe021;"></div> Say Hello</div></a>
+      <h1><?php echo get_theme_mod( 'homepage_title' ); ?></h1>
+      <h2><?php echo get_theme_mod( 'homepage_des' ); ?></h2>
+        <a href="<?php echo get_theme_mod( 'say_hello_link' ); ?>"><div class="say-hello animated fadeInUp"><div class="icon" data-icon="&#xe021;"></div> Say Hello</div></a>
     </div>
   </div>
 

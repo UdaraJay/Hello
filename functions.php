@@ -206,6 +206,7 @@ function wpt_work_detials() {
 	$color = get_post_meta( $post->ID, 'color', true );
 	$year = get_post_meta( $post->ID, 'year', true );
 	$field = get_post_meta( $post->ID, 'field', true );
+	$link = get_post_meta( $post->ID, 'link', true );
 	// Output the field
 
 	echo '<label style="display:block; margin-bottom:5px;">Tagline:</label>';
@@ -219,6 +220,10 @@ function wpt_work_detials() {
 
 	echo '<label style="display:block; margin-bottom:5px;">Field:</label>';
 	echo '<input type="text" name="field" value="' . esc_textarea( $field )  . '" class="widefat">';
+
+	echo '<label style="display:block; margin-bottom:5px;">Link:</label>';
+	echo '<input type="text" name="link" value="' . esc_textarea( $link )  . '" class="widefat"><br></br>';
+
 }
 
 function wpt_save_events_meta( $post_id, $post ) {
@@ -237,6 +242,7 @@ function wpt_save_events_meta( $post_id, $post ) {
 	$events_meta['color'] = esc_textarea( $_POST['color'] );
 	$events_meta['year'] = esc_textarea( $_POST['year'] );
 	$events_meta['field'] = esc_textarea( $_POST['field'] );
+	$events_meta['link'] = esc_textarea( $_POST['link'] );
 	// Cycle through the $events_meta array.
 	// Note, in this example we just have one item, but this is helpful if you have multiple.
 	foreach ( $events_meta as $key => $value ) :

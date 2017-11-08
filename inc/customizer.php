@@ -12,8 +12,8 @@
  */
 function hello_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	// $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	// $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
@@ -25,6 +25,49 @@ function hello_customize_register( $wp_customize ) {
 			'render_callback' => 'hello_customize_partial_blogdescription',
 		) );
 	}
+
+	// Add Homepage Customizer
+	$wp_customize->add_section('hello_homepage', array(
+		'title' => 'Homepage',
+		'description' => 'Options to edit your homepage',
+		'priority' => 20,
+	));
+
+	$wp_customize->add_setting( 'homepage_title' , array(
+	    'default'   => 'Hello.',
+	    'transport' => 'refresh',
+	) );
+
+	$wp_customize->add_setting( 'homepage_des' , array(
+	    'default'   => 'Type your bio here.',
+	    'transport' => 'refresh',
+	) );
+
+	$wp_customize->add_setting( 'say_hello_link' , array(
+	    'transport' => 'refresh',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'homepage_title', array(
+		'label'      => __( 'Title', 'hello' ),
+		'section'    => 'hello_homepage',
+		'settings'   => 'homepage_title',
+	) ) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'homepage_des', array(
+		'label'      => __( 'Bio', 'hello' ),
+		'section'    => 'hello_homepage',
+		'type'     => 'textarea',
+		'settings'   => 'homepage_des',
+	) ) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'say_hello_link', array(
+		'label'      => __( 'Say Hello link', 'hello' ),
+		'description'      => 'Can be a mailto link or a link to a contact form',
+		'section'    => 'hello_homepage',
+		'settings'   => 'say_hello_link',
+	) ) );
+
+
 }
 add_action( 'customize_register', 'hello_customize_register' );
 
@@ -52,4 +95,5 @@ function hello_customize_partial_blogdescription() {
 function hello_customize_preview_js() {
 	wp_enqueue_script( 'hello-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
+
 add_action( 'customize_preview_init', 'hello_customize_preview_js' );

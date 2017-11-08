@@ -25,15 +25,15 @@
         <?php $query = new WP_Query( array('post_type' => 'work', 'posts_per_page' => 5 ) );
         while ( $query->have_posts() ) : $query->the_post(); ?>
 
-        <a href="<?php the_permalink() ?>">
+        <a href="<?php echo get_post_meta( get_the_ID(), 'link', true ); ?>" target="_blank">
           <div class="work" style="background: <?php echo get_post_meta( get_the_ID(), 'color', true ); ?>">
             <div class="overlay"></div>
             <div class="image" style="background:url('<?php echo get_the_post_thumbnail_url(get_the_ID(),'full') ?>') no-repeat;"></div>
             <div class="content">
-                <a href="<?php the_permalink() ?>"><div class="title"><?php the_title(); ?></div>
+                <a href="<?php echo get_post_meta( get_the_ID(), 'link', true ); ?>" target="_blank"><div class="title"><?php the_title(); ?></div>
                 </a>
-                <a href="<?php the_permalink() ?>"><div class="tagline"><?php echo get_post_meta( get_the_ID(), 'tagline', true ); ?></div></a>
-                <a href="<?php the_permalink() ?>">
+                <a href="<?php echo get_post_meta( get_the_ID(), 'link', true ); ?>" target="_blank"><div class="tagline"><?php echo get_post_meta( get_the_ID(), 'tagline', true ); ?></div></a>
+                <a href="<?php echo get_post_meta( get_the_ID(), 'link', true ); ?> target="_blank"">
                 <div class="meta">
                   <div class="field"><?php echo get_post_meta( get_the_ID(), 'field', true ); ?></div>
                   <div class="year"><?php echo get_post_meta( get_the_ID(), 'year', true ); ?></div>
