@@ -30,16 +30,19 @@
 				<a href="/"><div class="site-name"><?php echo get_bloginfo( 'name' ); ?></div></a>
 			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'hello' ); ?></button>
-				<div id="primary-menu" class="menu"><ul>
+			<nav class="main-navigation">
+				<ul class="menu">
 					<li><a href="/resume"><div class="icon" data-icon="+"></div>Resume</a></li>
 					<li><a href="/work"><div class="icon" data-icon="&#xe05a;" style="font-size:1.3em;"></div>Portfolio</a></li>
 					<li><a href="/blog">Writing</a></li>
 					<li><a href="/about">About</a></li>
-					</ul>
-				</div>
+				</ul>
 			</nav><!-- #site-navigation -->
+
+			<script type="text/javascript">
+				var nav = priorityNav.init();
+			</script>
+
 		</div>
 	</header><!-- #masthead -->
 
